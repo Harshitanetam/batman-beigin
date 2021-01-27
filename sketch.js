@@ -7,6 +7,7 @@ var boy;
 var maxDrops=100;
 var drops;
 var currunt1,currunt2;
+var engine,world;
         
 function preload(){
    
@@ -17,10 +18,13 @@ function preload(){
 
 function setup(){
  createCanvas(800,800);
+ engine = Engine.create();
+ world = engine.world;
+
 
  rain=createSprite(50,0);
 
- drops=new Drops();
+ drops=new Drops(100,100,10);
 }
 
 function draw(){
@@ -31,7 +35,7 @@ function draw(){
     image(currunt2,100,0,400,300);
     
     
-    //drop.display();
+    drops.display();
    // rain.display();
   //switchcase.display();
     
